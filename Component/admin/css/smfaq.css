@@ -1,0 +1,39 @@
+.vote-no-smfaq {
+	background: url("../../../../media/com_smfaq/images/icon-16-smfaq-no.png") no-repeat left;
+	margin-left:10px;
+	padding:10px 0px 10px 20px;
+	line-height:20px;
+}
+.icon-48-smfaq {
+	background: url("../../../../media/com_smfaq/images/icon-48-smfaq-list.png") 
+}
+.vote-yes-smfaq {
+	background: url("../../../../media/com_smfaq/images/icon-16-smfaq-yes.png") no-repeat left;
+	padding:10px 0 10px 20px;
+	line-height:20px;
+}
+.smfaq textarea {
+	width:100%;
+}
+.smfaq-delete {
+	background: url("../../../../media/com_smfaq/images/delete_icon.gif") no-repeat center;
+	width:16px;
+	height:16px;
+	margin:auto;
+}
+.smfaq-delete:hover {
+	cursor:pointer;
+}
+.sm-loader {
+	padding: 17px 0pt 0pt;
+	background: url("../../../../media/com_smfaq/images/ajax-loader.gif") no-repeat center;
+}
+.sm-loader2 {
+    background: url("../../../../media/com_smfaq/images/ajax-loader.gif") no-repeat center;
+    height: 17px;
+    float:right;
+    width: 20px;
+}
+#smfaq-votes {
+	margin:20px;
+}

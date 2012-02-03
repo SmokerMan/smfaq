@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<field name="question" type="textarea" 
+				label="COM_SMFAQ_FIELD_QUESTION_LABEL" 
+				rows="5"
+				cols="10"
+ 				required="true"
+				/>
+	<field name="answer" type="editor" 
+				label="COM_SMFAQ_FIELD_ANSWER_LABEL" 
+				hide="pagebreak,readmore"
+ 				filter="SAFEHTML"
+				/>
+	<field name="vote" type="votes" 
+				label="COM_SMFAQ_FIELD_VOTE_LABEL"
+				description="COM_SMFAQ_FIELD_IP_DESC"		
+				/>			
+	<field name="comments" type="comments" 
+				label="COM_SMFAQ_FIELD_COMMENTS_LABEL"
+				description="COM_SMFAQ_FIELD_COMMENTS_DESC"		
+				/>			
+
+	<fieldset name="details">
+		<field name="id" type="hidden" 
+				default="0" 
+				readonly="true"  
+				/>
+		<field name="user_id" type="hidden"
+				readonly="true" 
+				/>	
+		<field name="created_by" type="text" 
+				label="COM_SMFAQ_FIELD_AUTHOR_LABEL" 
+				description="COM_SMFAQ_FIELD_AUTHOR_DESC"
+				size="30"
+				/>
+		<field name="created_by_email" type="text" 
+				label="COM_SMFAQ_FIELD_EMAIL_LABEL" 
+				description="COM_SMFAQ_FIELD_EMAIL_DESC"
+				size="30"
+				/>
+		<field name="ip" type="ip" 
+				label="COM_SMFAQ_FIELD_IP_LABEL"
+				description="COM_SMFAQ_FIELD_IP_DESC"		
+				/>
+		<field name="answer_email" type="checkbox" 
+				label="COM_SMFAQ_ANSWER_EMAIL_LABEL"
+				description="COM_SMFAQ_ANSWER_EMAIL_DESC"
+				value="1"		
+				/>				
+		<field	name="published" type="list"
+				label="COM_SMFAQ_FIELD_STATE_LABEL"
+				description="COM_SMFAQ_FIELD_STATE_DESC"
+				class="inputbox"
+				size="1"
+				default="0">
+				<option	value="0">JUNPUBLISHED</option>
+				<option	value="1">JPUBLISHED</option>
+				<option	value="-2">JTRASH</option>
+		</field>
+		<field name="catid" type="category" 
+				extension="com_smfaq"
+				label="JCATEGORY" 
+				description="COM_SMFAQ_FIELD_CATEGORY_DESC"
+				class="inputbox"
+				/>	
+		<field name="created" type="smcalendar"
+				label="COM_SMFAQ_FIELD_CREATED_LABEL" 
+				description="COM_SMFAQ_FIELD_CREATED_DESC"
+				size="22"
+				/>
+		<field name="answer_created" type="smcalendar"
+				label="COM_SMFAQ_FIELD_ANSWER_CREATED_LABEL" 
+				description="COM_SMFAQ_FIELD_ANSWER_CREATED_DESC"
+				size="22"
+				/>	
+		<field	name="answer_state" type="list"
+				label="COM_SMFAQ_FIELD_ANSWER_STATE_LABEL"
+				description="COM_SMFAQ_FIELD_ANSWER_STATE_DESC"
+				class="inputbox"
+				size="1"
+				default="0">
+				<option	value="0">COM_SMFAQ_ANSWER_STATE_WAITING</option>
+				<option	value="1">COM_SMFAQ_ANSWER_STATE_YES</option>
+				<option	value="2">COM_SMFAQ_ANSWER_STATE_NO</option>
+		</field>
+	</fieldset>
+	<fieldset name="seo">
+		<field name="metadesc" type="textarea"
+			label="JFIELD_META_DESCRIPTION_LABEL" 
+			description="JFIELD_META_DESCRIPTION_DESC"
+			class="inputbox" rows="3" cols="30"
+			/>
+		<field name="metakey" type="textarea"
+			label="JFIELD_META_KEYWORDS_LABEL" 
+			description="JFIELD_META_KEYWORDS_DESC"
+			class="inputbox" rows="3" cols="30" 
+			/>			
+	</fieldset>
+</form>

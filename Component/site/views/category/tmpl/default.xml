@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SMFAQ_LAYOUT_CATEGORY">
+		<message>
+			<![CDATA[COM_SMFAQ_LAYOUT_CATEGORY_DESC]]>
+		</message>
+	</layout>
+	<fields name="request" addfieldpath="/components/com_smfaq/models/fields">
+		<fieldset name="request">
+			<field name="id" type="category"
+				description="COM_SMFAQ_FIELD_SELECT_CATEGORY_DESC"
+				extension="com_smfaq"
+				label="COM_SMFAQ_FIELD_SELECT_CATEGORY_LABEL"
+				required="true"
+			/>
+			<field type="hide" /> 
+		</fieldset>
+	</fields>
+</metadata>

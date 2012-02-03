@@ -1,0 +1,97 @@
+/*edit form*/
+#smfaq .button {display:inline-block;padding:3px 4px;-moz-border-radius:3px;-webkit-border-radius:10px;-khtml-border-radius:10px; border:#AAAAAA solid 1px;background:#DDDDDD url(../images/button-bg.png) repeat-x;} 
+#smfaq .button:hover {cursor:pointer; border-color:#507ca5}
+#smfaq fieldset legend, #smfaq .title {
+	color: #000000;
+    font-size: 150%;
+    font-weight: normal;
+    padding-bottom: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0;
+	line-height: 150%;
+	
+}
+#smfaq fieldset {
+  clear: both;
+  font-size: 100%;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  border-style: solid none none none;
+  padding: 10px;
+  margin: 0 0 0 0;
+}
+#smfaq .title {
+	margin-top:20px;
+}
+#smfaq textarea {width:100%;}
+#smfaq div.details div {
+  clear: left;
+  display: block;
+  margin: 5px 0 0 0;
+  padding: 1px 3px;
+}
+#smfaq div label {
+  display: block;
+  float: left;
+  width: 130px;
+  padding: 3px 5px;
+  margin: 0 0 5px 0;
+  text-align: right;
+}
+
+#smfaq .del-comment {
+	background: url("../../../media/com_smfaq/images/delete_icon.gif") no-repeat center;
+	width:16px;
+	height:16px;
+	display:inline-block;
+}
+#smfaq .del-comment:hover {
+	cursor:pointer;
+}
+
+#smfaq table.comments {
+	width: 100%;
+	border-spacing: 1px;
+	background-color: #f3f3f3;
+	color: #666;
+}
+	
+#smfaq table.comments th {
+	text-align: center;
+	background: #f7f7f7;
+	color: #666;
+	border: 1px solid #CCC;
+
+}
+#smfaq table.comments tr {
+	background-color: #fff;
+	text-align: left;
+}
+#smfaq table.comments tr.row1 td {
+	background: #f0f0f0;
+}
+#smfaq table.comments tr.row0:hover td,
+#smfaq table.comments tr.row1:hover td	{
+	background-color: #e8f6fe;
+}
+
+#smfaq table.comments td, 
+#smfaq table.comments th {
+	padding: 4px;
+	border:1px solid #CCC !important;
+} 
+#smfaq td.center {
+	text-align:center;	
+}   
+#smfaq .loader {
+	background: url(../../../media/com_smfaq/images/ajax-loader.gif) no-repeat left;
+	height:16px;
+	display:block;
+	
+}
+#smfaq .deleted {
+	text-align:center;
+}
+#smfaq .error {border: 1px solid red}
+

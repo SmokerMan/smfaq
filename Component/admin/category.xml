@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<field name="note" type="hidden" />
+	<fields	name="params">
+		<fieldset name="basic">
+			<field name="image" type="hidden" disabled="true" />
+			<field name="page_title" type="text"
+				description="COM_SMFAQ_PAGE_TITLE_DESC"
+				label="COM_SMFAQ_PAGE_TITLE_LABEL"
+			/>
+			<field name="show_page_title" type="radio"
+				default="0"
+				description="COM_SMFAQ_SHOW_PAGE_TITLE_DESC"
+				label="COM_SMFAQ_SHOW_PAGE_TITLE_LABEL"
+				>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="show_desc" type="radio"
+				default="0"
+				description="COM_SMFAQ_SHOW_DESC_DESC"
+				label="COM_SMFAQ_SHOW_DESC_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			
+			<field type="spacer" hr="true" />
+			
+			<field name="maxLevel" type="list"
+				description="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_DESC"
+				label="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_LABEL"
+				default="-1"
+				>
+					<option value="0">JNONE</option>
+					<option value="-1">JALL</option>
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>				
+			</field>	
+			<field name="show_subcat_desc" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_SUBCAT_DESC_DESC"
+				label="COM_SMFAQ_SHOW_SUBCAT_DESC_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_cat_num_links_cat" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_SUBCAT_NUM_LINKS_DESC"
+				label="COM_SMFAQ_SHOW_SUBCAT_NUM_LINKS_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_empty_categories" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_EMPTY_SUBCAT_DESC"
+				label="COM_SMFAQ_SHOW_EMPTY_SUBCAT_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+		
+		<fieldset name="question">
+			<field name="list_limit" type="text"
+					size="3"
+					label="COM_SMFAQ_LIST_LIMIT_LABEL"
+					description="COM_SMFAQ_LIST_LIMIT_DESC"
+					default="10"
+			/>
+			<field name="open_question" type="list"
+					label="COM_SMFAQ_OPEN_QUESTION_LIST_LABEL"
+					description="COM_SMFAQ_OPEN_QUESTION_LIST_DESC"
+					default="0"
+			>
+				<option value="0">COM_SMFAQ_OPEN_QUESTION_ACCARDION</option>
+				<option value="1">COM_SMFAQ_OPEN_QUESTION_ALL</option>
+				<option value="2">COM_SMFAQ_OPEN_QUESTION_NOT_USE</option>
+				<option value="3">COM_SMFAQ_OPEN_QUESTION_AS_LINK</option>
+			</field>
+			<field name="ordering" type="list"
+				default="4"
+				description="COM_SMFAQ_ORDER_DESC"
+				label="COM_SMFAQ_ORDER_LABEL"
+				>
+				<option value="0">COM_SMFAQ_ORDER_ALPHA</option>
+				<option value="1">COM_SMFAQ_ORDER_ALPHA_DESC</option>
+				<option value="2">COM_SMFAQ_ORDER_CREATED</option>
+				<option value="3">COM_SMFAQ_ORDER_CREATED_DESC</option>
+				<option value="4">COM_SMFAQ_ORDER_ORDERING</option>
+				<option value="5">COM_SMFAQ_ORDER_ORDERING_DESC</option>
+				
+			</field>
+			<field name="show_created_date" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_CREATED_DESC"
+				label="COM_SMFAQ_FIELD_CREATED_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_created_by" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_CREATED_BY_DESC"
+				label="COM_SMFAQ_FIELD_AUTHOR_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_answer_created_date" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_ANSWER_CREATED_DATE_DESC"
+				label="COM_SMFAQ_FIELD_ANSWER_CREATED_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_answer_created_by" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_ANSWER_CREATED_BY_DESC"
+				label="COM_SMFAQ_ANSWER_CREATED_BY_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="answer_created_by_type" type="list"
+				default="0"
+				description="COM_SMFAQ_FIELD_ANSWER_CREATED_BY_TYPE_DESC"
+				label="COM_SMFAQ_FIELD_ANSWER_CREATED_BY_TYPE_LABEL"
+				>
+				<option value="0">COM_SMFAQ_LOGIN</option>
+				<option value="1">COM_SMFAQ_NAME</option>
+			</field>			
+			
+			<field name="date_format" type="text"
+					label="COM_SMFAQ_DATE_FORMAT_LABEL"
+					description="COM_SMFAQ_DATE_FORMAT_DESC"
+					default="d.m.Y H:i"
+			/>
+			<field name="show_poll" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_POLL_DESC"
+				label="COM_SMFAQ_SHOW_POLL_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_print" type="radio"
+				default="0"
+				description="COM_SMFAQ_SHOW_PRINT_DESC"
+				label="COM_SMFAQ_SHOW_PRINT_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		</fieldset>
+
+		<fieldset name="form">
+			<field name="show_form" type="radio"
+				default="0"
+				description="COM_SMFAQ_SHOW_FORM_DESC"
+				label="COM_SMFAQ_SHOW_FORM_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="show_email" type="list"
+				default="0"
+				description="COM_SMFAQ_SHOW_EMAIL_DESC"
+				label="COM_SMFAQ_SHOW_EMAIL_LABEL"
+				>
+				<option value="0">COM_SMFAQ_REQUIRED</option>
+				<option value="1">COM_SMFAQ_NOT_REQUIRED</option>
+				<option value="2">JHIDE</option>
+			</field>			
+			<field name="created_by_type" type="list"
+				default="0"
+				description="COM_SMFAQ_FIELD_CREATED_BY_TYPE_DESC"
+				label="COM_SMFAQ_FIELD_CREATED_BY_TYPE_LABEL"
+				>
+				<option value="0">COM_SMFAQ_LOGIN</option>
+				<option value="1">COM_SMFAQ_NAME</option>
+			</field>
+			
+			<field name="max_length_question" type="text"
+				default="1000" size="5"				
+				description="COM_SMFAQ_MAX_LENGTH_QUESTION_DESC"
+				label="COM_SMFAQ_MAX_LENGTH_QUESTION_LABEL"
+			/>
+			<field name="min_length_question" type="text"
+				default="10"  size="5"
+				description="COM_SMFAQ_MIN_LENGTH_QUESTION_DESC"
+				label="COM_SMFAQ_MIN_LENGTH_QUESTION_LABEL"
+			/>
+			<field name="show_char_count" type="radio"
+				default="0"
+				description="COM_SMFAQ_SHOW_CHAR_COUNT_DESC"
+				label="COM_SMFAQ_SHOW_CHAR_COUNT_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>	
+			<field name="show_captcha" type="list"
+				description="COM_SMFAQ_SHOW_CAPTCHA_DESC"
+				label="COM_SMFAQ_SHOW_CAPTCHA_LABEL"
+				default="1"
+				>
+				<option value="0">COM_SMFAQ_NOT_SHOW</option>
+				<option value="1">COM_SMFAQ_NOT_REGISTERED</option>
+				<option value="2">JALL</option>
+					
+			</field>
+			<field name="show_send_mail" type="radio"
+				default="1"
+				description="COM_SMFAQ_SHOW_SEND_MAIL_DESC"
+				label="COM_SMFAQ_SHOW_SEND_MAIL_LABEL"
+				>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="disabled_mail" type="radio"
+				default="0"
+				description="COM_SMFAQ_DISABLED_MAIL_DESC"
+				label="COM_SMFAQ_DISABLED_MAIL_LABEL"
+				>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+		</fieldset>
+		
+	</fields>
+</form>

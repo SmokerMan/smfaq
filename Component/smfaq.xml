@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6.0" method="upgrade">
+        <name>SMFAQ</name>
+        <creationDate>20.04.2011</creationDate>
+        <author>SmokerMan</author>
+        <authorEmail>kolyamba831@inbox.ru</authorEmail>
+        <authorUrl>http://joomla-code.ru</authorUrl>
+        <copyright>(C) 2009 - 2012 SmokerMan. All rights reserved.</copyright>
+        <license>GNU GPL v.3</license>
+        <version>1.7 beta 1</version>
+        <description>COM_SMFAQ_XML_DESCRIPTION</description>
+
+		<scriptfile>script.php</scriptfile>
+        <install>
+			<sql>
+				<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+			</sql>
+        </install>
+        <uninstall> 
+			<sql>
+				<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+			</sql>
+        </uninstall>
+
+		<updateservers>
+			<server type="extension" priority="1" name="smfaq component">http://www.joomla-code.ru/updates/smfaq/com_smfaq.xml</server>
+		</updateservers>
+
+	
+		<media destination="com_smfaq" folder="media">
+			<folder>images</folder>
+		</media>
+		
+		<languages folder="site/language">
+			<language tag="en-GB">en-GB/en-GB.com_smfaq.ini</language>
+			<language tag="ru-RU">ru-RU/ru-RU.com_smfaq.ini</language>
+		</languages>
+		
+
+        <files folder="site">
+                <filename>index.html</filename>
+                <filename>smfaq.php</filename>
+				<filename>controller.php</filename>
+				<filename>router.php</filename>
+				<folder>controllers</folder>
+				<folder>css</folder>
+				<folder>js</folder>
+				<folder>helpers</folder>
+				<folder>libraries</folder>
+				<folder>models</folder>
+				<folder>views</folder>
+        </files>		
+		
+		
+        <administration>
+			<menu img="../media/com_smfaq/images/icon-16-smfaq-main.gif">smfaq</menu>
+			<submenu>
+				<menu img="../media/com_smfaq/images/icon-16-smfaq-list.gif" view="smfaqlist">questions</menu>
+				<menu link="option=com_categories&amp;extension=com_smfaq"
+					view="categories" img="../media/com_smfaq/images/icon-16-smfaq-categories.gif" 
+					alt="SMFAQ/Categories">categories</menu>
+			</submenu>
+			<files folder="admin">
+				<filename>index.html</filename>
+				<filename>smfaq.php</filename>
+				<filename>controller.php</filename>
+				<filename>access.xml</filename>
+				<filename>category.xml</filename>
+				<folder>css</folder>
+				<folder>sql</folder>
+				<folder>tables</folder>
+				<folder>models</folder>
+				<folder>views</folder>
+				<folder>controllers</folder>
+				<folder>helpers</folder>
+			</files>
+			<languages folder="admin/language">
+				<language tag="en-GB">en-GB/en-GB.com_smfaq.ini</language>
+				<language tag="en-GB">en-GB/en-GB.com_smfaq.sys.ini</language>
+				<language tag="ru-RU">ru-RU/ru-RU.com_smfaq.ini</language>
+				<language tag="ru-RU">ru-RU/ru-RU.com_smfaq.sys.ini</language>
+			</languages>
+		</administration>
+</extension>

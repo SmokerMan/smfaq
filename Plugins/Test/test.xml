@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="smfaq" method="upgrade">
+	<name>Test</name>
+	<author>SmokerMan</author>
+	<creationDate>01.02.2012</creationDate>
+	<copyright>© 2012. All rights reserved.</copyright>
+	<license>GNU/GPL v.3 or later.</license>
+	<authorEmail>kolyamba831@inbox.ru</authorEmail>
+	<authorUrl>http://joomla-code.ru</authorUrl>
+	<version>1.0</version>
+	<description>PLG_SMFAQ_TEST_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<files>
+		<filename plugin="test">test.php</filename>
+		<filename>index.html</filename>
+		<folder>fields</folder>
+	</files>
+	<languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.plg_smfaq_test.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_smfaq_test.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_smfaq_test.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_smfaq_test.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic"/>
+		</fields>
+	</config>
+</extension>

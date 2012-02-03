@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<access component="com_smfaq">
+	<section name="category">
+		<action name="core.create" title="COM_SMFAQ_ACCESS_CREATE" description="COM_SMFAQ_ACCESS_CREATE_DESC" />
+		<action name="core.edit" title="COM_SMFAQ_ACCESS_EDIT" description="COM_SMFAQ_ACCESS_EDIT_DESC" />
+	</section>
+</access>
