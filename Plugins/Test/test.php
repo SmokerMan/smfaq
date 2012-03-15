@@ -2,7 +2,7 @@
 /**
  * Smfaq_test
  * 
- * @version 	1.0	
+ * @version 	1.1
  * @author		SmokerMan kolyamba831@inbox.ru
  * @url			http://joomla-code.ru
  * @copyright	© 2012. All rights reserved. 
@@ -50,6 +50,24 @@ class plgSmfaqTest extends JPlugin
 		return;
 	}
 
+	/**
+	 * Метод для подготовки формы на фронте
+	 * @param object $form объект Jform
+	 */
+	public function onPrepareForm($form)
+	{
+		
+		if ($form->getName() !== 'question') {
+			return;
+		}
+	
+		JForm::addFormPath(dirname(__FILE__).DS.'fields');
+		$form->loadFile('fields', false);
+	
+		return;
+	
+	}
+		
 	/**
 	 * Метод для подготовки формы редактирования
 	 * @param object $form объект Jform
