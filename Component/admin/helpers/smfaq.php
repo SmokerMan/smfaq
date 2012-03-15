@@ -39,9 +39,6 @@ class SmFaqHelper
 			$doc = JFactory::getDocument();
 			$doc->addStyleDeclaration('.icon-48-smfaq-categories {background: url("../media/com_smfaq/images/icon-48-smfaq-categories.png") no-repeat 10px 0 !important}');
 			
-			// скрыть options
-			$script = 'window.onload = function() { var t = document.getElementById(\'toolbar-popup-options\'); t.parentNode.removeChild(t);} ';
-			$doc->addScriptDeclaration($script);
 		}
 		
 		JSubMenuHelper::addEntry(
@@ -61,9 +58,13 @@ class SmFaqHelper
 	{
 		$user	= JFactory::getUser();
 		$result	= new JObject;
-
-		$assetName = 'com_smfaq.category.'.(int) $categoryId;
-		$actions = array('core.create', 'core.edit');
+		if (empty($categoryId)) {
+			$assetName = 'com_smfaq';
+		} else {
+			$assetName = 'com_smfaq.category.'.(int) $categoryId;
+		}
+		
+		$actions = array('core.create', 'core.edit', 'core.admin', 'core.manage');
 
 		foreach ($actions as $action) {
 			$result->set($action,	$user->authorise($action, $assetName));

@@ -283,16 +283,8 @@ function SmfaqParseRoute($segments)
 		}
 
 		if ($found == 0) {
-			if ($advanced) {
-				$db = JFactory::getDBO();
-				$query = 'SELECT id FROM #__snfaq WHERE catid = '.(int) $vars['catid'].' AND alias = '.$db->Quote($segment);
-				$db->setQuery($query);
-				$cid = $db->loadResult();
-			} else {
-				$cid = $segment;
-			}
 
-			$vars['id'] = $cid;
+			$vars['id'] = $segment;
 
 		}
 

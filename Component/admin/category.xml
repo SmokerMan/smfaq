@@ -158,6 +158,14 @@
 				<option value="0">JHIDE</option>
 				<option value="1">JSHOW</option>
 			</field>
+			<field name="content_plugins" type="radio"
+				default="0"
+				description="COM_SMFAQ_CONTENT_PLUGINS_DESC"
+				label="COM_SMFAQ_CONTENT_PLUGINS_LABEL"
+				>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>			
 		</fieldset>
 
 		<fieldset name="form">

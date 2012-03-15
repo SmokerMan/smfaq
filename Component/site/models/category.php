@@ -2,9 +2,9 @@
 /**
  * SMFAQ
  *
- * @package		component for Joomla 2.5+
- * @version		1.7 beta 2
- * @copyright	(C)2009 - 2011 by SmokerMan (http://joomla-code.ru)
+ * @package		component for Joomla 1.6. - 2.5
+ * @version		1.7 beta 1
+ * @copyright	(C)2009 - 2012 by SmokerMan (http://joomla-code.ru)
  * @license		GNU/GPL v.3 see http://www.gnu.org/licenses/gpl.html
  */
 
@@ -247,7 +247,7 @@ class SmfaqModelCategory extends JModelList
 	 * @param integer $id		ID вопроса
 	 * @param integer $value	Значение
 	 */
-	public function storeVote($id, $value)
+	public function storeVote($id = null, $value)
 	{
 		$db		= $this->getDbo();
 		$query	= $db->getQuery(true);
@@ -296,7 +296,7 @@ class SmfaqModelCategory extends JModelList
 	{
 		$table = $this->getTable('Smfaq');
 
-		$post['created'] = JFactory::getDate()->toSql();
+		$post['created'] = JFactory::getDate()->toMySQL();
 		$post['ip'] = $_SERVER['REMOTE_ADDR'];
 
 		// удаляем ненужные значения если такие будут
@@ -382,7 +382,7 @@ class SmfaqModelCategory extends JModelList
 					$query = 'SELECT email FROM #__users WHERE id IN ('.$users_id.')';
 					$db->setQuery($query);
 					$emails = $db->loadResultArray();
-
+				
 					if ($emails) {
 						$config	= JFactory::getConfig();
 						$mailfrom = $config->get('mailfrom');
@@ -395,8 +395,12 @@ class SmfaqModelCategory extends JModelList
 						$subject = JText::sprintf('COM_SMFAQ_MAIL_SUBJECT_NEW', $category->title);
 						$message = JText::sprintf('COM_SMFAQ_MAIL_MESSAGE_NEW', $data['created_by'], $date, $data['question'], $link);
 				
-						$mail = JFactory::getMailer();
 
+						$mail = JFactory::getMailer();
+						if (($mail->Mailer == 'mail') && ! function_exists('mail')) {
+							return false;
+						}
+				
 						foreach ($emails as $email) {
 							$send = $mail->sendMail($mailfrom, $fromname, $email, $subject, $message);
 							if ($send !== true) {

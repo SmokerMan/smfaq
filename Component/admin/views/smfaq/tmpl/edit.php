@@ -16,6 +16,7 @@ defined('_JEXEC') or die('@-_-@'); ?>
 	Joomla.submitbutton = function(task)
 	{
 		if (task == 'smfaq.cancel' || document.formvalidator.isValid(document.id('smfaq-form'))) {
+			<?php echo $this->form->getField('answer')->save(); ?>
 			Joomla.submitform(task, document.getElementById('smfaq-form'));
 		}
 		else {

@@ -51,8 +51,8 @@ class SmfaqController extends JController
 	 */
 	public function showform()
 	{
-		$view = $this->getView('category', 'html');
-		$view->displayForm();
+		$view = $this->getView('form', 'html');
+		$view->display();
 		return;
 	}
 
@@ -236,8 +236,8 @@ class SmfaqController extends JController
 
 		// форма для комментария
 		if ($vote_value == 0) {
-			$view = $this->getView('category', 'html');
-			$view->displayCommentForm();
+			$view = $this->getView('comments', 'html');
+			$view->display();
 			return;
 		} else {
 			$html = '<strong>'.JText::_('COM_SMFAQ_SANKS_FOR_VOTE').'</strong>';

@@ -206,52 +206,5 @@ class SmfaqViewCategory extends JView
 		}
 	}
 
-	/**
-	 * Метод для отображения формы вопроса
-	 * @param unknown_type $tpl
-	 */
-	public function displayForm($tpl = 'form')
-	{
-
-		$catid = JRequest::getInt('catid', null, 'GET');
-
-		$categories = JCategories::getInstance('SmFaq');
-		$category = $categories->get($catid);
-
-		$params = $category->getParams();
-		if ($layout = $params->get('category_layout')) {
-			$this->setLayout($layout);
-		}
-
-		$this->assignRef('params', $params);
-		$this->assignRef('category', $category);
-
-		parent::display($tpl);
-	}
-
-	/**
-	 * Метод для отображения формы комментария
-	 * @param unknown_type $tpl
-	 */
-	public function displayCommentForm($tpl = 'comment')
-	{
-
-		$id = JRequest::getInt('id', null, 'POST');
-		$catid = JRequest::getInt('catid', null, 'catid');
-
-		$categories = JCategories::getInstance('SmFaq');
-		$category = $categories->get($catid);
-
-		$params = $category->getParams();
-		
-		if ($layout = $params->get('category_layout')) {
-			$this->setLayout($layout);
-		}
-
-		$this->assignRef('id', $id);
-
-		parent::display($tpl);
-	}
-
 
 }

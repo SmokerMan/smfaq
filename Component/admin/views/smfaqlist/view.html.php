@@ -75,8 +75,6 @@ class SmFAQViewSmfaqList extends JView {
 		JToolBarHelper::custom('smfaqlist.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
 		JToolBarHelper::divider();
 		JToolBarHelper::checkin('smfaqlist.checkin');
-		//JToolBarHelper::custom('smfaqlist.checkin', 'checkin.png', 'checkin_f2.png', 'JTOOLBAR_CHECKIN', true);
-		JToolBarHelper::divider();
 		
 		// Замена тулбара карзины на удаление
 		if ($this->state->get('filter.published') == -2) {
@@ -84,6 +82,7 @@ class SmFAQViewSmfaqList extends JView {
 		} else {
 			JToolBarHelper::trash('smfaqlist.trash','JTOOLBAR_TRASH');
 		}
+		JToolBarHelper::divider();
 		
 		if ($canDo->get('core.admin')) {
 			JToolBarHelper::preferences('com_smfaq');

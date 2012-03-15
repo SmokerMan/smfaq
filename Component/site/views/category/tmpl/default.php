@@ -121,6 +121,11 @@ if ($canCreate && !$canEdit) :
 	            </div>
 	        <?php endif ?>   
             <div class="clr"></div>
+           <?php 
+            if ($this->params->get('content_plugins')) {
+            	 $item->answer = JHtml::_('content.prepare', $item->answer);
+            }
+            ?>  
 			<?php echo $item->answer; ?> 
             <?php if ($canEdit) : ?> 
             	<div class="clr"></div>

@@ -9,7 +9,7 @@
 	<field name="answer" type="editor" 
 				label="COM_SMFAQ_FIELD_ANSWER_LABEL" 
 				hide="pagebreak,readmore"
- 				filter="SAFEHTML"
+ 				filter="JComponentHelper::filterText"
 				/>
 	<field name="vote" type="votes" 
 				label="COM_SMFAQ_FIELD_VOTE_LABEL"
