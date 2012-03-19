@@ -391,15 +391,15 @@ class SmfaqModelCategory extends JModelList
 						$date = JFactory::getDate(null, $config->get('offset'));
 						$date = $date->format('d.m.Y H:i');
 				
-						$link = JURI::root().'index.php?option=com_smfaq&task=smfaq.edit&id='.$this->getState('smfaq.id').'&catid='.$category->id;
+						$link = JURI::root().'index.php?option=com_smfaq&task=edit.edit&id='.$this->getState('smfaq.id').'&catid='.$category->id;
 						$subject = JText::sprintf('COM_SMFAQ_MAIL_SUBJECT_NEW', $category->title);
 						$message = JText::sprintf('COM_SMFAQ_MAIL_MESSAGE_NEW', $data['created_by'], $date, $data['question'], $link);
 				
 
 						$mail = JFactory::getMailer();
-						if (($mail->Mailer == 'mail') && ! function_exists('mail')) {
-							return false;
-						}
+// 						if (($mail->Mailer == 'mail') && ! function_exists('mail')) {
+// 							return false;
+// 						}
 				
 						foreach ($emails as $email) {
 							$send = $mail->sendMail($mailfrom, $fromname, $email, $subject, $message);

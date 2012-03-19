@@ -13,7 +13,7 @@ defined('_JEXEC') or die('@-_-@');
 
 jimport( 'joomla.application.component.view' );
 
-class SmfaqViewSmfaq extends JView
+class SmfaqViewEdit extends JView
 {
 	protected $state;
 	protected $item;
@@ -27,7 +27,6 @@ class SmfaqViewSmfaq extends JView
 		$this->form		= $this->get('Form');
 		$this->comments	= $this->get('Comments');
 		
-		
 		// запрет прямого просмотра для пользователей
 		$user		= JFactory::getUser();
 		$catid = $this->form->getValue('catid');
@@ -35,6 +34,8 @@ class SmfaqViewSmfaq extends JView
 		if (!$catid) {
 			$catid = JRequest::getInt('catid');
 		}
+		
+		
 
 		$authorised = $user->authorise('core.edit', 'com_smfaq.category.'.$catid);
 		
@@ -47,6 +48,7 @@ class SmfaqViewSmfaq extends JView
 			JError::raiseWarning(500, implode("\n", $errors));
 			return false;
 		}
+		
 		
 		// установка значений для формы
 		if ($this->form->getValue('user_id')) {
@@ -76,4 +78,5 @@ class SmfaqViewSmfaq extends JView
 		
 		parent::display($tpl);
 	}
+
 }

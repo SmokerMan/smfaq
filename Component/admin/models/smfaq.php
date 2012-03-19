@@ -130,18 +130,19 @@ class SmfaqModelSmfaq extends JModelAdmin
 		}
 
 		// Установка дат
+		$tz = new DateTimeZone($config->get('offset'));
 		$datenow = JFactory::getDate()->toSql();
-		if (empty($table->created )) {
+		if (empty($table->created)) {
 			$table->created = $datenow;
 		} else {
-			$table->created = JFactory::getDate($table->created)->toSql(false);
+			$table->created = JFactory::getDate($table->created, $tz)->toSql(false);
 		}
 
 		//если дата ответа пустая ставим текущю дату
 		if (empty($table->answer_created)) {
 			$table->answer_created = $datenow;
 		} else {
-			$table->answer_created = JFactory::getDate($table->answer_created)->toSql(false);
+			$table->answer_created = JFactory::getDate($table->answer_created, $tz)->toSql(false);
 		}
 
 
@@ -178,7 +179,7 @@ class SmfaqModelSmfaq extends JModelAdmin
 	/**
 	 * метод для отправки уведомления
 	 */
-	protected function sendUser($data)
+	protected function sendUser(&$data)
 	{
 
 		$config	= JFactory::getConfig();
@@ -188,18 +189,18 @@ class SmfaqModelSmfaq extends JModelAdmin
 		jimport('joomla.application.categories');
 		$categories = JCategories::getInstance('SmFaq');
 		$category = $categories->get((int) $data['catid']);		
+		
 
+		require_once JPATH_SITE.DS.'components'.DS.'com_smfaq'.DS.'helpers'.DS.'route.php';
+
+		$link = JURI::root().SmfaqHelperRoute::getCategoryRoute($category->id).'&limit=0#p'.$data['id'];
 		$subject = JText::sprintf('COM_SMFAQ_MAIL_SUBJECT_ANSWER', $category->title);
-		$itemId = JRequest::getInt('Itemid');
-		$link = $link = JURI::root().'index.php?option=com_smfaq&view=category&id='.$category->id.'&Itemid='.$itemId.'&limit=0#p'.$data['id'];
+
 		$date = JHtml::date($data['created'], 'd.m.Y');
 		$message = JText::sprintf('COM_SMFAQ_MAIL_MESSAGE_ANSWER', $date, $data['question'], $link);
 		
-		
-		
-		jimport('joomla.mail.mail');
-		$mail = JMail::getInstance();
-		
+
+		$mail = JFactory::getMailer();
 
 		$send = $mail->sendMail($mailfrom, $fromname, $data['created_by_email'], $subject, $message);
 		
@@ -211,8 +212,6 @@ class SmfaqModelSmfaq extends JModelAdmin
 	{
 		parent::preprocessForm($form, $data, $group);
 	}
-
-	
 
 	
 }

@@ -16,7 +16,7 @@ $Itemid = JRequest::getInt('Itemid', null);
 <div>
 	<ul>
 	<?php foreach ($this->items as $item) : 
-	$link = 'index.php?option=com_smfaq&task=smfaq.edit&id='.$item->id.'&catid='.$item->catid.'&Itemid='.$Itemid;
+	$link = 'index.php?option=com_smfaq&task=edit.edit&id='.$item->id.'&catid='.$item->catid.'&Itemid='.$Itemid;
 	?>
 	<li>
 	<div>

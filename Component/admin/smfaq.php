@@ -10,6 +10,11 @@
 
 // защита от прямого доступа
 defined('_JEXEC') or die('@-_-@');
+
+if (!JFactory::getUser()->authorise('core.manage', 'com_smfaq')) {
+	throw new Exception(JText::_('JERROR_ALERTNOAUTHOR'));
+	return;
+}
 // Подключаем библеотеку контроллера Joomla
 jimport('joomla.application.component.controller');
 // Получаем экземпляр класса контроллера с префиксом SmFAQ

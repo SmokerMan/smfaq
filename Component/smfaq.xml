@@ -7,7 +7,7 @@
         <authorUrl>http://joomla-code.ru</authorUrl>
         <copyright>(C) 2009 - 2012 SmokerMan. All rights reserved.</copyright>
         <license>GNU GPL v.3</license>
-        <version>1.7 beta 2</version>
+        <version>1.7 beta 3</version>
         <description>COM_SMFAQ_XML_DESCRIPTION</description>
 
 		<scriptfile>script.php</scriptfile>

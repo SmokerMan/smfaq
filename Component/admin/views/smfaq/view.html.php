@@ -44,6 +44,14 @@ class SmFAQViewSmfaq extends JView
 			$this->form->setFieldAttribute('answer_email', 'disabled', 'true');
 		}
 
+		//установки календарика
+		$baseurl = JURI::root();
+		require_once JPATH_SITE.DS.'components/com_smfaq/libraries/calendar/calendar.php';
+		SmfaqHelperCalendar::setup();
+		$this->document->addScript( $baseurl . 'components/com_smfaq/libraries/calendar/js/jscal2.js');
+		$this->document->addStyleSheet( $baseurl . 'components/com_smfaq/libraries/calendar/css/jscal2.css');
+		$this->document->addStyleSheet( $baseurl . 'components/com_smfaq/libraries/calendar/css/gold/gold.css');		
+		
 		// Установка тулбара
 		$this->_setToolBar();
 		// Отображаем шаблон

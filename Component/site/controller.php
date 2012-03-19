@@ -32,7 +32,7 @@ class SmfaqController extends JController
 
 		$auth = $user->authorise('core.edit', 'com_smfaq.category.'.$id);
 
-		if ($auth ||($_SERVER['REQUEST_METHOD'] == 'POST' || $vName == 'smfaq')) {
+		if ($auth ||($_SERVER['REQUEST_METHOD'] == 'POST' || $vName == 'edit')) {
 			$cachable = false;
 		}
 
@@ -120,7 +120,7 @@ class SmfaqController extends JController
 				}
 
 				// Установка сообщения
-				if (isset($post['answer_email'])) {
+				if (isset($post['answer_email']) && $post['answer_email']) {
 					$res['msg'] = JText::_('COM_SMFAQ_SEND_OK_SUB');
 				} else {
 					$res['msg'] = JText::_('COM_SMFAQ_SEND_OK');

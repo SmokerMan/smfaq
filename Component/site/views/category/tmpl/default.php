@@ -59,7 +59,7 @@ if ($canCreate && !$canEdit) :
 		<span onclick="SmFaq.showform(true,this)" class="button"><?php echo JText::_('COM_SMFAQ_NEW_QUESTION'); ?></span>
 <?php endif; ?>
 <?php elseif ($canEdit) : ?>
-	<a href="<?php echo JRoute::_('index.php?option=com_smfaq&amp;task=smfaq.add&amp;catid='.$this->category->id); ?>" class="button">
+	<a href="<?php echo JRoute::_('index.php?option=com_smfaq&amp;task=edit.add&amp;catid='.$this->category->id); ?>" class="button">
 	<?php echo JText::_('COM_SMFAQ_NEW_QUESTION'); ?></a>
 	<span class="button" style="margin-left:10px;" onclick="SmFaq.unpublished(<?php echo JRequest::getInt('Itemid', null); ?>)">
 	<?php echo JText::_('COM_SMFAQ_SHOW_NO_ANSWER_QUESTIONS'); ?></span>
@@ -129,7 +129,7 @@ if ($canCreate && !$canEdit) :
 			<?php echo $item->answer; ?> 
             <?php if ($canEdit) : ?> 
             	<div class="clr"></div>
-				<a class="button" href="<?php echo JRoute::_('index.php?option=com_smfaq&task=smfaq.edit&catid='.$item->catid.'&id='.$item->id); ?>"><?php echo JText::_('COM_SMFAQ_EDIT'); ?></a>
+				<a class="button" href="<?php echo JRoute::_('index.php?option=com_smfaq&task=edit.edit&catid='.$item->catid.'&id='.$item->id); ?>"><?php echo JText::_('COM_SMFAQ_EDIT'); ?></a>
 				<span><?php echo JText::sprintf('COM_SMFAQ_VOTE_STATE', $item->vote_yes, $item->vote_no, $item->comments); ?></span>
 			<?php endif; ?>	
 			<?php // Вывод опроса ?>

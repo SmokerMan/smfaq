@@ -13,6 +13,20 @@ defined('_JEXEC') or die('@-_-@'); ?>
 
 <script type="text/javascript">
 //<![CDATA[
+           
+if (typeof(SmFaq) === 'undefined') {var SmFaq = {};}  
+SmFaq.delcomment = function(id, s) {
+	s.className='sm-loader';
+	row = 'comment-'+id;
+    new Request({
+        url: 'index.php?option=com_smfaq&task=smfaq.delcomment&format=raw',
+        onSuccess: function(responseText, responseXML) {
+        	s.set('class','');
+        	s.set('html', responseText);
+         	setTimeout("SMFAQ_highlight(row);",2000); 
+        }
+    }).send('id='+id);	
+}        
 	Joomla.submitbutton = function(task)
 	{
 		if (task == 'smfaq.cancel' || document.formvalidator.isValid(document.id('smfaq-form'))) {
@@ -38,18 +52,6 @@ defined('_JEXEC') or die('@-_-@'); ?>
 		});
 	}
 
-	function delcomment(id, s) {
-		s.className='sm-loader';
-		row = 'comment-'+id;
-	    new Request({
-	        url: 'index.php?option=com_smfaq&task=smfaq.delcomment&format=raw',
-	        onSuccess: function(responseText, responseXML) {
-            	s.set('class','');
-            	s.set('html', responseText);
-             	setTimeout("SMFAQ_highlight(row);",2000); 
-	        }
-	    }).send('id='+id);	
- 	}
 
 	function resetvote(id, b) {
 		var l = new Element('div', {

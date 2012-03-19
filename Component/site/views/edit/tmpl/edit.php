@@ -43,7 +43,7 @@ SmFaq.submitform = function(task, f) {
 			return;
 		}
 	}
-	f.task.value = 'SmFaq.'+task;
+	f.task.value = 'Edit.'+task;
 	f.submit();
 }
 SmFaq.check = function (f) {
@@ -62,7 +62,7 @@ SmFaq.check = function (f) {
 	}
 	return true	
 }
-SmFaq.delComment = function(id, e) {
+SmFaq.delcomment = function(id, e) {
 	if (!confirm('<?php echo JText::_('COM_SMFAQ_DEL_COMMENT_CONFIRM'); ?>')) return;
 	e.innerHTML = '';
 	e.className='loader'
@@ -118,41 +118,22 @@ SmFaq.delComment = function(id, e) {
 			 <?php endforeach; ?> 
 		</fieldset>
     </div>
-    <input type="button" class="button" onclick="SmFaq.submitform('save', this.form);" value="<?php echo JText::_('COM_SmFaq_SAVE'); ?>" />
-	<input type="button" class="button" onclick="SmFaq.submitform('cancel', this.form);" value="<?php echo JText::_('COM_SmFaq_CLOSE'); ?>" />
-    
-	<?php 
-	if ($this->comments) : ?>
-		<div class="title"><?php echo JText::_('COM_SMFAQ_COMMENTS'); ?></div>
-	 	<table class="comments">
-	 		<thead>
-	 		<tr>
-	 			<th width="20%"><?php echo JText::_('COM_SMFAQ_DATE'); ?></th>
-	 			<th width="75%"><?php echo JText::_('COM_SMFAQ_COMMENT'); ?></th>
-	 			<th width="5%"><?php echo JText::_('COM_SMFAQ_DEL'); ?></th>
-	 		</tr>
-	 		</thead>
-	 		<tbody>
-			<?php 
-			$i = 0;
-			foreach ($this->comments as $comment) : ?>
-			<tr class="row<?php echo $i%2; ?>">
-			<td class="center">
-				<?php echo JHtml::date($comment->created, 'd.m.Y H:i'); ?>
-			</td>
-			<td>
-				<?php echo $this->escape($comment->comment); ?>
-			</td>
-			<td class="center">
-				<div title="<?php echo JText::_('COM_SMFAQ_DEL_COMMENT_TITLE'); ?>" class="del-comment" onclick="SmFaq.delComment(<?php echo $comment->id; ?>,this)"></div>
-			</td>
-			</tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>	 		
-	 		</tbody>
-		</table>
-	<?php endif; ?>    
-
+    <div class="details">
+    	<fieldset>
+    		<legend><?php echo JText::_('COM_SMFAQ_QUESTION_SEO_LABEL'); ?></legend>
+ 			<?php foreach ($this->form->getFieldset('seo') as $field) : ?>
+				<div><?php echo $field->label; ?><?php echo $field->input; ?></div>
+			<?php endforeach; ?> 
+		</fieldset>			
+	</div>		    
+    <input type="button" class="button" onclick="SmFaq.submitform('save', this.form);" value="<?php echo JText::_('COM_SMFAQ_SAVE'); ?>" />
+	<input type="button" class="button" onclick="SmFaq.submitform('cancel', this.form);" value="<?php echo JText::_('COM_SMFAQ_CLOSE'); ?>" />
+    <?php if ($this->form->getValue('id')) : ?>
+	    <fieldset>
+	    	<legend> <?php echo $this->form->getLabel('comments'); ?></legend>
+	    	<?php echo $this->form->getInput('comments'); ?>
+	    </fieldset>
+	<?php endif; ?>
 <input type="hidden" name="task" value="" /> 
 <?php echo JHTML::_('form.token'); ?>
 </form>

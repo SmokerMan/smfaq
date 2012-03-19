@@ -50,7 +50,7 @@ class JFormFieldComments extends JFormField
 				$html .= '<tr id="comment-'.$comment->id.'" class="row'. $i % 2 .'">';
 				$html .= '<td>'.JHTML::_('date',$comment->created, JText::_('COM_SMFAQ_DATE_FORMAT')).'</td>';
 				$html .= '<td>'.$comment->comment.'</td>';
-				$html .= '<td class="center"><div title="'.JText::_('COM_SMFAQ_DELETE_DESC').'" onclick="return delcomment('.$comment->id.',this)" class="smfaq-delete"></div></td>';
+				$html .= '<td class="center"><div title="'.JText::_('COM_SMFAQ_DELETE_DESC').'" onclick="return SmFaq.delcomment('.$comment->id.',this)" class="smfaq-delete"></div></td>';
 				$html .= '</tr>';
 				$i++;
 			}

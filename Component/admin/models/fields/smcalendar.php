@@ -39,19 +39,40 @@ class JFormFieldSmCalendar extends JFormField
 	 */
 	protected function getInput()
 	{
-		$format = '%d.%m.%Y %H:%M';
-
-		if (($this->value == '0000-00-00 00:00:00') || !$this->value) {
-			$this->value = null;
+		// Initialize some field attributes.
+		$format = $this->element['format'] ? (string) $this->element['format'] : 'd.m.Y H:i';
+		$readonly = $this->element['readonly'] ? 'readonly="readonly"' : null;
+		
+		
+		if ($this->value && $this->value !== '0000-00-00 00:00:00') {
+			$this->value = JHtml::date($this->value, $format);
 		} else {
-			$date = JFactory::getDate($this->value);
-			$config = JFactory::getConfig();
-			$date->setTimezone(new DateTimeZone($config->get('offset')));
-			$this->value = $date->format('d.m.Y H:i', true);
+			$this->value = null;
 		}
+		
+		$jformat = str_replace('d', '%d', $format);
+		$jformat = str_replace('m', '%m', $jformat);
+		$jformat = str_replace('Y', '%Y', $jformat);
+		$jformat = str_replace('H', '%H', $jformat);
+		$jformat = str_replace('i', '%M', $jformat);
+		
+		$time = JHtml::date('now', 'Hi');
+		
+		$html = '<input name="'.$this->name.'" id="'.$this->id.'" value="'.$this->value.'"'. $readonly. ' /><img onmouseover="this.style.cursor=\'pointer\'" src="media/com_smfaq/images/calendar_icon.png" alt="Calendar" id="cal-'.$this->element['name'].'" />';
 
 
+		$html .= '<script type="text/javascript">
+   		Calendar.setup({
+	        trigger    : "cal-'.$this->element['name'].'",
+	        inputField : "'.$this->id.'",
+	        dateFormat : "'.$jformat.'",
+	        onSelect : function() { this.hide() },
+	        showTime: true,
+	        time: "'.$time.'",
+    	});
+		</script>';
 
-		return JHtml::_('calendar', $this->value, $this->name, $this->id, $format);
+
+		return $html;
 	}
 }

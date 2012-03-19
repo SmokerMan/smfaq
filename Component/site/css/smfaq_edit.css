@@ -40,44 +40,44 @@
   text-align: right;
 }
 
-#smfaq .del-comment {
+#smfaq .smfaq-delete {
 	background: url("../../../media/com_smfaq/images/delete_icon.gif") no-repeat center;
 	width:16px;
 	height:16px;
 	display:inline-block;
 }
-#smfaq .del-comment:hover {
+#smfaq .smfaq-delete:hover {
 	cursor:pointer;
 }
 
-#smfaq table.comments {
+#smfaq table.adminlist {
 	width: 100%;
 	border-spacing: 1px;
 	background-color: #f3f3f3;
 	color: #666;
 }
 	
-#smfaq table.comments th {
+#smfaq table.adminlist th {
 	text-align: center;
 	background: #f7f7f7;
 	color: #666;
 	border: 1px solid #CCC;
 
 }
-#smfaq table.comments tr {
+#smfaq table.adminlist tr {
 	background-color: #fff;
 	text-align: left;
 }
-#smfaq table.comments tr.row1 td {
+#smfaq table.adminlist tr.row1 td {
 	background: #f0f0f0;
 }
-#smfaq table.comments tr.row0:hover td,
-#smfaq table.comments tr.row1:hover td	{
+#smfaq table.adminlist tr.row0:hover td,
+#smfaq table.adminlist tr.row1:hover td	{
 	background-color: #e8f6fe;
 }
 
-#smfaq table.comments td, 
-#smfaq table.comments th {
+#smfaq table.adminlist td, 
+#smfaq table.adminlist th {
 	padding: 4px;
 	border:1px solid #CCC !important;
 } 
@@ -94,4 +94,8 @@
 	text-align:center;
 }
 #smfaq .error {border: 1px solid red}
+
+#smfaq #jform_metadesc, #smfaq #jform_metakey {
+	width:50%;
+}
 

@@ -67,11 +67,13 @@
 				label="COM_SMFAQ_FIELD_CREATED_LABEL" 
 				description="COM_SMFAQ_FIELD_CREATED_DESC"
 				size="22"
+
 				/>
 		<field name="answer_created" type="smcalendar"
 				label="COM_SMFAQ_FIELD_ANSWER_CREATED_LABEL" 
 				description="COM_SMFAQ_FIELD_ANSWER_CREATED_DESC"
 				size="22"
+
 				/>	
 		<field	name="answer_state" type="list"
 				label="COM_SMFAQ_FIELD_ANSWER_STATE_LABEL"
