@@ -34,6 +34,7 @@
 		<languages folder="site/language">
 			<language tag="en-GB">en-GB/en-GB.com_smfaq.ini</language>
 			<language tag="ru-RU">ru-RU/ru-RU.com_smfaq.ini</language>
+			<language tag="uk-UA">uk-UA/uk-UA.com_smfaq.ini</language>
 		</languages>
 		
 
@@ -80,6 +81,8 @@
 				<language tag="en-GB">en-GB/en-GB.com_smfaq.sys.ini</language>
 				<language tag="ru-RU">ru-RU/ru-RU.com_smfaq.ini</language>
 				<language tag="ru-RU">ru-RU/ru-RU.com_smfaq.sys.ini</language>
+				<language tag="uk-UA">uk-UA/uk-UA.com_smfaq.ini</language>
+				<language tag="uk-UA">uk-UA/uk-UA.com_smfaq.sys.ini</language>				
 			</languages>
 		</administration>
 </extension>
