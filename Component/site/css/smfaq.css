@@ -35,7 +35,7 @@
 #smfaq-form .count {clear:both;height:30px;}
 #smfaq-form .lastcount {color:red;}
 #smfaq-form img {float:left;}
-#smfaq-form .captcha input {width:50px;argin:10px 0 0 0;clear:both;}
+#smfaq-form .captcha input {width:50px;margin:10px 0 0 0;clear:both;}
 #smfaq-form .ch_email input {width:15px;height:15px;clear:both;}
 #smfaq-form .ch_email label, #smfaq-form .captcha label {width:320px;clear:none;margin:14px 0 0 10px;}
 

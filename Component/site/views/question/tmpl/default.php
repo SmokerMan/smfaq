@@ -52,7 +52,7 @@ $canEdit = $this->user->authorise('core.edit', 'com_smfaq.category.'.$this->item
 <?php echo $this->item->answer; ?>
 <?php if ($canEdit) : ?>
 	<div class="clr"></div>
-	<a class="button" href="<?php echo JRoute::_('index.php?option=com_smfaq&task=smfaq.edit&catid='.$this->item->catid.'&id='.$this->item->id); ?>"><?php echo JText::_('COM_SMFAQ_EDIT'); ?></a>
+	<a class="button" href="<?php echo JRoute::_('index.php?option=com_smfaq&task=edit.edit&catid='.$this->item->catid.'&id='.$this->item->id); ?>"><?php echo JText::_('COM_SMFAQ_EDIT'); ?></a>
 	<span><?php echo JText::sprintf('COM_SMFAQ_VOTE_STATE', $this->item->vote_yes, $this->item->vote_no, $this->item->comments); ?></span>
 <?php endif; ?>	
 

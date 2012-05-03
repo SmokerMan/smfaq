@@ -2,9 +2,9 @@
 /**
  * SMFAQ
  *
- * @package		component for Joomla 2.5+
- * @version		1.7 beta 2
- * @copyright	(C)2009 - 2011 by SmokerMan (http://joomla-code.ru)
+ * @package		component for Joomla 1.6. - 2.5
+ * @version		1.7 beta 1
+ * @copyright	(C)2009 - 2012 by SmokerMan (http://joomla-code.ru)
  * @license		GNU/GPL v.3 see http://www.gnu.org/licenses/gpl.html
  */
 

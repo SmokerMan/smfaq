@@ -35,8 +35,6 @@ class SmfaqViewEdit extends JView
 			$catid = JRequest::getInt('catid');
 		}
 		
-		
-
 		$authorised = $user->authorise('core.edit', 'com_smfaq.category.'.$catid);
 		
 		if (($authorised !== true) || !$catid) {
@@ -60,6 +58,9 @@ class SmfaqViewEdit extends JView
 		}
 		
 		$this->form->setFieldAttribute('answer', 'buttons', 'false');
+		
+		$this->form->removeField('answer_created_by_id');
+
 
 		
 		$baseurl = $this->document->baseurl;

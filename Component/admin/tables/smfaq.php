@@ -64,6 +64,10 @@ class TableSmFAQ extends JTable
 			$this->metakey = implode(", ", $clean_keys); // put array back together delimited by ", "
 		}
 		
+		if (empty($this->answer_created_by_id)) {
+			$this->answer_created_by_id = JFactory::getUser()->id;
+		}
+		
 		return parent::store($updateNulls);
 	}	
 

@@ -26,8 +26,8 @@
 				readonly="true"  
 				/>
 		<field name="user_id" type="hidden"
-				readonly="true" 
-				/>	
+				readonly="true"  
+				/>					
 		<field name="created_by" type="text" 
 				label="COM_SMFAQ_FIELD_AUTHOR_LABEL" 
 				description="COM_SMFAQ_FIELD_AUTHOR_DESC"
@@ -37,7 +37,7 @@
 				label="COM_SMFAQ_FIELD_EMAIL_LABEL" 
 				description="COM_SMFAQ_FIELD_EMAIL_DESC"
 				size="30"
-				/>
+				/>		
 		<field name="ip" type="ip" 
 				label="COM_SMFAQ_FIELD_IP_LABEL"
 				description="COM_SMFAQ_FIELD_IP_DESC"		
@@ -46,7 +46,11 @@
 				label="COM_SMFAQ_ANSWER_EMAIL_LABEL"
 				description="COM_SMFAQ_ANSWER_EMAIL_DESC"
 				value="1"		
-				/>				
+				/>		
+		<field name="answer_created_by_id" type="user"
+				label="COM_SMFAQ_FIELD_AUTHOR_ANSWER_LABEL" 
+				description="COM_SMFAQ_FIELD_AUTHOR_ANSWER_DESC"
+				/>					
 		<field	name="published" type="list"
 				label="COM_SMFAQ_FIELD_STATE_LABEL"
 				description="COM_SMFAQ_FIELD_STATE_DESC"

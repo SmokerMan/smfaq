@@ -111,9 +111,6 @@ class SmfaqModelSmfaq extends JModelAdmin
 		$user = JFactory::getUser();
 		$config = JFactory::getConfig();
 		
-
-		$table->answer_created_by_id = $user->get('id');
-
 		if (empty($table->created_by)) {
 			// параметры категории
 			jimport( 'joomla.application.categories');

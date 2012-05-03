@@ -28,6 +28,9 @@ class SmfaqHelperCategory
 		$doc->addStyleDeclaration('.icon-48-smfaq-category-edit {background: url("../media/com_smfaq/images/icon-48-smfaq-category.png") no-repeat 10px 0 !important}');
 		$doc->addStyleDeclaration('.icon-48-smfaq-category-add {background: url("../media/com_smfaq/images/icon-48-smfaq-category.png") no-repeat 10px 0 !important}');
 		
+		$lang = JFactory::getLanguage();
+		$lang->load('com_smfaq', JPATH_ADMINISTRATOR);
+		
 		return;
 	}
 }
