@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="search" method="upgrade">
+	<name>plg_search_smfaq</name>
+	<author>SmokerMan</author>
+	<creationDate>03.05.2012</creationDate>
+	<copyright>© 2012. All rights reserved.</copyright>
+	<license>GNU/GPL v.3 or later.</license>
+	<authorEmail>kolyamba831@inbox.ru</authorEmail>
+	<authorUrl>http://joomla-code.ru</authorUrl>
+	<version>1.0</version>
+	<description>PLG_SMFAQ_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="smfaq">smfaq.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.plg_search_smfaq.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.plg_search_smfaq.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_search_smfaq.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_search_smfaq.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="area_label" type="text"
+					filter="text"
+					label="PLG_SEARCH_SMFAQ_FIELD_AREA_LABEL_LABEL"
+					description="PLG_SEARCH_SMFAQ_FIELD_AREA_LABEL_DESC"
+					default="FAQ"
+				/>
+				<field name="search_limit" type="text"
+					filter="int"
+					label="PLG_SEARCH_SMFAQ_FIELD_SEARCH_LIMIT_LABEL"
+					description="PLG_SEARCH_SMFAQ_FIELD_SEARCH_LIMIT_DESC"
+				/>
+				<field name="result_link" type="list"
+					filter="int"
+					label="PLG_SEARCH_SMFAQ_FIELD_RESULT_LINK_LABEL"
+					description="PLG_SEARCH_SMFAQ_FIELD_RESULT_LINK_DESC">
+						<option value="1">PLG_SEARCH_LINK</option>
+						<option value="0">PLG_SEARCH_ANCHOR</option>
+				</field>				
+			</fieldset>
+		</fields>
+	</config>
+</extension>
