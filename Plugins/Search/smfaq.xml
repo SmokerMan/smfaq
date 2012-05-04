@@ -13,11 +13,16 @@
 		<filename plugin="smfaq">smfaq.php</filename>
 		<filename>index.html</filename>
 	</files>
+	<updateservers>
+		<server type="extension" priority="2" name="smfaqsearchplugin">http://www.joomla-code.ru/updates/smfaq/com_smfaq.xml</server>
+	</updateservers>
 	<languages folder="language">
 		<language tag="ru-RU">ru-RU/ru-RU.plg_search_smfaq.ini</language>
 		<language tag="ru-RU">ru-RU/ru-RU.plg_search_smfaq.sys.ini</language>
 		<language tag="en-GB">en-GB/en-GB.plg_search_smfaq.ini</language>
 		<language tag="en-GB">en-GB/en-GB.plg_search_smfaq.sys.ini</language>
+		<language tag="uk-UA">uk-UA/uk-UA.plg_search_smfaq.sys.ini</language>
+		<language tag="uk-UA">uk-UA/uk-UA.plg_search_smfaq.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
