@@ -2,7 +2,7 @@
 /**
  * Smfaq Search Plugin
  * 
- * @version 	1.0	
+ * @version 	1.1	
  * @author		SmokerMan kolyamba831@inbox.ru
  * @url			http://joomla-code.ru
  * @copyright	© 2012. All rights reserved. 
@@ -128,7 +128,7 @@ class plgSearchSmfaq extends JPlugin
 		$case_when .= ' ELSE ';
 		$case_when .= $c_id.' END as catslug';
 				
-		$query->select('a.id, a.question, a.answer AS text, a.created, a.metakey, a.metadesc, c.title AS section, '.$case_when);
+		$query->select('a.id, a.question AS title, a.answer AS text, a.created, a.metakey, a.metadesc, c.title AS section, '.$case_when);
 		$query->where( '('. $where .' AND a.published = 1 AND c.published = 1 )' );
 		$query->from('#__smfaq AS a');
 		$query->join('INNER', '#__categories AS c ON c.id=a.catid AND extension='.$db->quote('com_smfaq'));
@@ -149,7 +149,6 @@ class plgSearchSmfaq extends JPlugin
 					$list[$key]->href = JRoute::_(SmfaqHelperRoute::getCategoryRoute($item->catslug).'&limit=0#p'.$item->id);
 				}
 				
-				$list[$key]->title = $item->question;
 				$list[$key]->browsernav = true;
 			}
 		}	
