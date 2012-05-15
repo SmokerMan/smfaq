@@ -20,11 +20,14 @@ class SmfaqViewCategory extends JView
 	protected $category;
 	protected $children;
 	protected $pagination;
+	protected $form = null;
 
 	function display( $tpl = null )
 	{
 		$app	= JFactory::getApplication();
 		$user	= JFactory::getUser();
+		JPluginHelper::importPlugin('smfaq');
+		$dispatcher = JDispatcher::getInstance();
 
 		// берем данные из модели
 		$state		= $this->get('State');
@@ -33,8 +36,8 @@ class SmfaqViewCategory extends JView
 		if ($category == false) {
 			JError::raiseError(404, JText::_('JGLOBAL_CATEGORY_NOT_FOUND'));
 			return;
-		}		
-		
+		}
+
 		$items		= $this->get('Items');
 		$children	= $this->get('Children');
 		$parent 	= $this->get('Parent');
@@ -74,8 +77,7 @@ class SmfaqViewCategory extends JView
 
 		$children = array($category->id => $children);
 		$maxLevel =  $params->get('maxLevel', -1);
-
-
+		
 		$this->assignRef('maxLevel',	$maxLevel);
 		$this->assignRef('params',		$params);
 		$this->assignRef('category',	$category);
@@ -86,12 +88,23 @@ class SmfaqViewCategory extends JView
 		$this->assignRef('parent',		$parent);
 		$this->assignRef('ret',			$ret);
 
-
+		//загрузка формы, если она отображается сразу
+		if ($params->get('show_form', 0)) {
+			JForm::addFormPath('components/com_smfaq/models/forms');
+			JForm::addFieldPath('components/com_smfaq/models/fields');
+			$this->form = JForm::getInstance('question', 'question');
+			//плагины для формы
+			$results = $dispatcher->trigger('onPrepareForm', array($this->form));
+			ob_start();
+			require_once 'components/com_smfaq/views/form/tmpl/default.php';
+			$form = ob_get_contents();
+			ob_end_clean();
+			$this->assignRef('form',	$form);
+		}
+		
 		$this->_prepareDocument();
 		
 		//плагины
-		JPluginHelper::importPlugin('smfaq');
-		$dispatcher = JDispatcher::getInstance();		
 		$events = $dispatcher->trigger('onSmfaqBeforeDisplay', array('com_smfaq.category', $category, $params));
 		if ($events && is_array($events)) {
 			foreach ($events as $event) {

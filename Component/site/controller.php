@@ -28,7 +28,6 @@ class SmfaqController extends JController
 		$vName	= JRequest::getWord('view', 'category');
 		JRequest::setVar('view', $vName);
 		$id	= JRequest::getInt('id');
-		JRequest::setVar('view', $vName);
 
 		$auth = $user->authorise('core.edit', 'com_smfaq.category.'.$id);
 

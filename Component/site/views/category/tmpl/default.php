@@ -53,8 +53,8 @@ switch ($this->params->get('open_question', 0)) {
 <div id="smfaq" class="questions">
 <?php // Вывод формы добавления вопроса
 if ($canCreate && !$canEdit) :
-	if ($this->params->get('show_form', 0)) : ?>
-		<div><?php echo $this->loadTemplate('form'); ?></div>
+	if ($this->params->get('show_form', 0) && isset($this->form)) : ?>
+		<div><?php echo $this->form; ?></div>
 	<?php else : ?>
 		<span onclick="SmFaq.showform(true,this)" class="button"><?php echo JText::_('COM_SMFAQ_NEW_QUESTION'); ?></span>
 <?php endif; ?>
