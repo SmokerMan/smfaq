@@ -25,14 +25,18 @@ SM FAQ
 <?php echo JText::_($this->data['description']); ?>
 </div>
 <div style="margin-top:20px;">
+<p><?php echo JText::_('COM_SMFAQ_TRANSLATORS'); ?></p>
+<ul>
+	<li>English - SanyaBerkut</li>
+	<li>Ukrain - <a target="_blank" href="http://www.free-lance.ru/users/Mark29/">Mark29</a></li>
+</ul>
+<p><?php echo JText::_('COM_SMFAQ_DESIGN_LOGO_ICON');  ?> - <a target="_blank" href="http://www.stepindesign.ru/">Alexander Stepin</a></p>
 <p> 
-<?php echo JText::sprintf('COM_SMFAQ_LICENSE'); ?>
-</p>
-<p style="margin:0 0 5px 10px;">
-<?php echo JText::_('COM_SMFAQ_DESIGN_DESC'); ?>
+<?php echo JText::_('COM_SMFAQ_LICENSE'); ?>
 </p>
 <p>
-&copy; 2009-2011 <?php echo $this->data['author']; ?>
+<?php $date = JFactory::getDate()->format('Y') > '2009' ? '2009 - '. JFactory::getDate()->format('Y') : '2009'; ?>
+&copy; <?php echo $date; ?> <?php echo $this->data['author']; ?>
  | <a target="_blamk" href="<?php echo $this->data['authorUrl']; ?>"><?php echo str_replace('http://','',$this->data['authorUrl']); ?></a>
  </p>
 </div>

@@ -42,6 +42,19 @@ class com_smfaqInstallerScript
          */
         function update($parent) 
         {
+        	//Add filed for  1.6
+        	
+        	$db		= JFactory::getDBO();
+        	$field = $db->getTableFields('#__smfaq');
+        	if (!isset($field['#__smfaq']['metadesc'])) {
+        		$query = ' ALTER TABLE `#__smfaq` ADD `metadesc` text NOT NULL,
+        					ADD `metakey` text NOT NULL';
+        		$db->setQuery($query);
+        		if (!$db->query()) {
+        			throw new Exception($db->getErrorMsg()) ;
+        		}
+
+        	}
         }
  
         /**
