@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="1.6.0" method="upgrade">
         <name>SMFAQ</name>
-        <creationDate>06.06.2012</creationDate>
+        <creationDate>20.06.2012</creationDate>
         <author>SmokerMan</author>
         <authorEmail>kolyamba831@inbox.ru</authorEmail>
         <authorUrl>http://joomla-code.ru</authorUrl>
         <copyright>(C) 2009 - 2012 SmokerMan. All rights reserved.</copyright>
         <license>GNU GPL v.3</license>
-        <version>1.7.0</version>
+        <version>1.7.1</version>
         <description>COM_SMFAQ_XML_DESCRIPTION</description>
 		<scriptfile>script.php</scriptfile>
         <install>

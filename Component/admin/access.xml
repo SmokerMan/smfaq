@@ -3,6 +3,8 @@
 	<section name="component">
 		<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC" />
 		<action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC" />
+		<action name="core.create" title="COM_SMFAQ_ACCESS_CREATE_CATEGORY" description="COM_SMFAQ_ACCESS_CREATE_CATEGORY_DESC" />
+		<action name="core.edit" title="COM_SMFAQ_ACCESS_CATEGORY_DEDIT" description="COM_SMFAQ_ACCESS_EDIT_CATEGORY_DDESC" />		
 	</section>	
 	<section name="category">
 		<action name="core.create" title="COM_SMFAQ_ACCESS_CREATE" description="COM_SMFAQ_ACCESS_CREATE_DESC" />
