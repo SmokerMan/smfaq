@@ -66,7 +66,7 @@ class SmfaqModelCategory extends JModelList
 		$query->from('`#__smfaq` AS a');
 
 
-		if (isset($params->created_by_type) && (int) $params->created_by_type === 1) {
+        if (isset($params->answer_created_by_type) && (int) $params->answer_created_by_type === 1) {
 			$query->select('u.name AS answer_created_by');
 		} else {
 			$query->select('u.username AS answer_created_by');
